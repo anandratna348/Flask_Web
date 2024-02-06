@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grocery App</title>
+	<style>
+       
+        nav{
+            background-color: black;
+        }
+        nav li {
+             display: inline-block;
+             margin: 0 5px;
+        }
+		h1{
+			text-align: center;
+		}
+        button{
+			/* border: 2px solid red; */
+			padding: 15px;
+			border-radius: 10px;
+			cursor: pointer;
+			margin: 10px;
+			 
+			
+		}
+		a{
+			/* border: 2px solid red; */
+			text-decoration: none;
+			padding: 10px;
+			font-size: larger;
+			font-weight: 600;
+		}
+		button:hover{
+			color: rgb(212, 243, 243);
+			background-color: rgb(218, 214, 214);
+			transition: .4s ease-in;
+		}
+    </style>
+
+</head>
+<body>
+	<header>
+		<h1>Welcome to our Grocery Store</h1>
+	</header>
+	<main>
+		<div style="text-align: center;">
+			<button><a href = '/login'>Login</a></button>
+			<button><a href = '/signup'>Signup</a></button>
+			<button><a href = '/admin_login'>Admin login</a></button>
+			<button><a href = '/admin_register'> Admin Register</a></button>
+		</div>
+	</main>
+</body>
+</html>

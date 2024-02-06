@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>products</title>
+  <style>
+    *{
+        background-color: rgb(175, 240, 240);
+    }
+    nav{
+        background-color: black;
+    }
+    nav li {
+         display: inline-block;
+         margin: 0 5px;
+    }
+</style>
+</head>
+<body>
+	<h1>Product List</h1>
+    <p>Here are the details of product</p>
+  {% if getproduct==[]%}
+   No Product found. Add the category now!
+  {%else%}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>product_name</th>
+            <th>description</th>
+            <th>price rate</th>
+            <th>category_id</th>
+            <th>manufacturer</th>
+            <th>stock</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for k in getproduct%}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>{{k.name}}</td>
+                  <td>{{k.description}}</td>
+                  <td>{{k.price_rate}}</td>
+                  <td>{{k.category_id}}</td>
+                  <td>{{k.manufacturer}}</td>
+                  <td>{{k.stock}}</td>
+                  <td>
+                    <a href="/product/{{k.id}}/{{k.category_id}}/edit">Edit Product</a><br>
+                    <a href="/p/{{k.id}}">Delete Product</a>
+                  </td>
+              </tr>
+           {%endfor%}
+        </tbody>
+    </table>
+    {%endif%}
+    <a href="/add_product" >+Add product</a>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        *{
+            background-color: rgb(246, 247, 247);
+        }
+        nav{
+            background-color: black;
+        }
+        nav li {
+             display: inline-block;
+             margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    {%if category_list is none%}
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li style = "float: right;"><a class="active" href="/summary">Summary</a></li>
+            <li style="float: right;"><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>Hello Admin</h1><br><br>
+    <a href = "/add_category">+Add category</button></a>
+    {%else%}
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li style = "float: right;"><a  href="/histogram">Summary</a></li>
+            <li style="float: right;"><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>Hello Admin</h1><br><br>
+    <table border = "2">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>Descreption</th>
+            <th>Details</th>
+            <th>list</th>
+          </tr>
+        </thead>
+        <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>Here you can check categories list</td>
+                  <td>You can add,edit and delete categories</td>
+                  <td>
+                    <a href = "/category_admin_list">
+                        Category_list
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Here you can see the product added by you</td>
+                <td>you can also perform actions</td>
+                <td>
+                  <a href = "/cr">
+                      Category-products-list
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>User_purchasing</td>
+                <td>You can check purchased products by user</td>
+                <td>
+                  <a href = "/buying">
+                      check purchased product here
+                  </a>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+    {%endif%}     
+</body>
+</html>

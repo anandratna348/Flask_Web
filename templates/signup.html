@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+
+body{
+    display: flex;
+    margin-top:100px ;
+    align-content: center;
+    justify-content: center;
+}
+
+        .main_container{
+            
+            border: 1px solid rgb(245, 242, 242);
+            width: 50vw;
+     text-align: center;
+     justify-content: center;
+     background-color: antiquewhite;
+     padding: 50px;
+     border-radius: 12px;
+        }
+       .container{
+        border: 1px solid rgb(214, 207, 207);
+        justify-content: center;
+        border-radius: 12px ;
+
+        padding: 30px 40px;
+       }
+
+       input{
+        padding: 10px 30px;
+        border-radius:12px ;
+       }
+
+       #submit{
+            display: block;
+            border: 1px solid rgb(134, 132, 132);
+            border-radius: 12px;
+            margin: 14px 40%;
+            padding: 10px 30px;
+            font-size: medium;
+            font-weight: 400;
+
+       }
+
+       
+    </style>
+</head>
+<body>
+    
+        <div class="main_container">
+
+            <h1>Grocery Store</h1>
+    
+            <div class="container">
+                <form method = "POST">
+                    <h2>Sign Up</h2>
+                    Username:<input type="text"  name="username" ><br><br>
+                    Password: <input type="password" name="password" required><br><br>
+                    Email:<input type="email"  name="email" required>
+                    <button type="submit" id="submit">SignUp</button>
+                </form>
+        
+            </div>
+        </div>
+      
+    
+</body>
+</html>

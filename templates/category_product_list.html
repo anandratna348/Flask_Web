@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>products</title>
+    <style> 
+        table {
+    background-color: rgb(111, 228, 228);
+}
+</style>
+</head>
+<body>
+	<h1>Product List</h1>
+  <h3><a href='/user_dashboard'>Home</a></h3>
+  <h3><a href='/category_list'>Back</a></h3>
+    <p>Here are the details of product</p>
+  {% if getproduct==[]%}
+   No products found
+  {%else%}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price Rate</th>
+            <th>Stock</th>
+            <th>Manufacturer</th>
+            <th>Category_id</th>
+            <th>Add to Cart</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for k in getproduct%}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>{{k.name}}</td>
+                  <td>{{k.description}}</td>
+                  <td>{{k.price_rate}}</td>
+                  <td>{{k.stock}}</td>
+                  <td>{{k.manufacturer}}</td>
+                  <td><a href="/product_details/{{k.id}}/goods">{{k.category_id}}</a></td>
+
+                  <td><a href = "/add_to_cart/{{k.id}}/">Add to Cart</a></td>
+              </tr>
+           {%endfor%}
+        </tbody>
+    </table>
+    {%endif%}
+</body>
+</html>

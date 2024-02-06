@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+    <style> 
+        table {
+    background-color: rgb(149, 193, 209);
+}
+</style>
+</head>
+<body>
+	<h1>Categories List</h1>
+  <h1><a href='/user_dashboard'></a>Home</h1>
+    <p>Here are the details of venues</p>
+  {% if getg==[]%}
+   No category found.
+  {%else%}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in getg%}
+              <tr>
+                  <td>{{n.name}}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {%endif%}
+</body>
+</html>

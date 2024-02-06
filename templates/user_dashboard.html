@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{user}} Dashboard</title>
+    <style>
+        *{
+            background-color: rgb(245, 248, 249);
+        }
+        nav{
+            background-color: black;
+        }
+        nav li {
+             display: inline-block;
+             margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    {%if product_list is none%}
+    <header>
+        <h1>{{user}} Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li style = "float: right;"><a href = "#">Profile</a></li>
+            <li style="float: right;"><a href = "/rate">Rate product</a></li>
+            <li style="float: right;"><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+    {%else%}
+    <header>
+        <h1>{{user}} Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li style = "float: right;"><a href = "#">Profile</a></li>
+            <li style="float: right;"><a href = "/rate">Rate product</a></li>
+            <li style="float: right;"><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+    <br>
+    <h2>Hello {{user}} welcome to Grocery Store app</h2><br>
+    <h2><a href="/search_op">search category here</a></h2>
+    <h2><a href="/search_cp">search product here</a></h2>
+    <h2><a href="/search_manufacturer">search manufacturer here</a></h2>
+    <h2><a href="/cart">My Cart</a></h2>
+    <h2><a href="/buy">My Purchasing History</a></h2>
+    <table border = "2">
+            <thead>
+              <tr>
+                <th>SNo</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Categories and Products</th>
+              </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>Here you can check category list</td>
+                      <td> Product available info regarding categories are provided</td>
+                      <td>
+                        <a href = "/category_list">
+                            Category_list
+                        </a>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Here you can check product which are in respective category</td>
+                    <td>You can check ratings,tags, price and category of product here</td>
+                    <td>
+                      <a href = "/category_product_list">
+                          Category-product-list
+                      </a>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+        {%endif%}
+</body>
+</html>

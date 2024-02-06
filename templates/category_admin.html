@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>category_admin</title>
+    <style> 
+        table {
+    background-color: rgb(190, 219, 248);
+}
+</style>
+</head>
+<body>
+	<h1>Category List</h1>
+    <p>Here are the details of category</p>
+  {% if getcategory==[]%}
+   No category found.Add the categories now!
+  {%else%}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>List</th>
+            <th>Category_name</th>
+            <th>actions</th>
+            <th>Products in category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in getcategory %}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>Product_list</td>
+                  <td>{{n.name}}</td>
+                  <td>
+                    <a href = "/category/{{n.id}}/edit">Edit Category</a>
+                    <a href="/p/{{n.id}}">Delete</a>
+                  </td>
+                  <td><a href = "/visit_product/{{n.id}}">Product are here</a></td>
+              </tr>
+          {% endfor %}
+        </tbody><br>
+    </table>
+    {%endif%}
+    <a href = "/add_category">+Add Category</a>
+</body>
+</html>

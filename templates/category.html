@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+    <style> 
+        table {
+    background-color: rgb(241, 243, 244);
+}
+</style>
+</head>
+<body>
+	<h1>Categories List</h1>
+  <h3><a href='/user_dashboard'>Home</a></h3>
+    <p>Here are the details of categories</p>
+  {% if getcategory==[]%}
+   No category found.Add the categories now!
+  {%else%}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>List</th>
+            <th>Category_name</th>
+            <th>Products</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in getcategory %}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>Product_list</td>
+                  <td>{{n.name}}</td>
+                  <td><a href="/visit_product/{{n.id}}">Products</a></td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {%endif%}
+</body>
+</html>

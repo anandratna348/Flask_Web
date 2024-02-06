@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check ratings</title>
+        <style>
+            *{
+                background-color: rgb(253, 255, 255);
+            }
+        </style>
+    </head>
+    <body>
+        {%if rate is not none%}
+        <h1>The rating of the product is {{rate}}</h1>
+        {%else%}
+        <h1>No one rated it yet</h1>
+        {%endif%}
+    </body>
+</html>

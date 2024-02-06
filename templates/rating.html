@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{user}} Dashboard</title>
+    <style>
+        *{
+            background-color: rgb(248, 253, 254);
+        }
+        nav{
+            background-color: black;
+        }
+        nav li {
+             display: inline-block;
+             margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{user}} Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li style = "float: right;"><a href = "#">Profile</a></li>
+            <li style="float: right;"><a href = "/user_dashboard">Home</a></li>
+            <li style="float: right;"><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+    <br>
+    
+    <table border = "2">
+        <thead>
+          <tr>
+            <th>Product_id</th>
+            <th>View Rating</th>
+            <th>Submit rating</th>
+          </tr>
+        </thead>
+        {%for i in getrating%}
+        <tbody>
+           <td>{{i.id}}</td> 
+           <td><a href="/rater/{{i.id}}">Check rating</a></td>
+           <td><a href="/ratings/{{i.id}}">Submit rating</a></td>
+        </tbody>
+        {%endfor%}
+    </table>
+    
+</body>
+</html>

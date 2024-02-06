@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+    <style> 
+        table {
+    background-color: black;
+}
+        *{
+            background-color: rgb(246, 247, 247);
+        }
+        nav{
+            background-color: black;
+        }
+        nav li {
+             display: inline-block;
+             margin: 0 5px;
+        }
+</style>
+</head>
+<body>
+	<h1>Product List</h1>
+  <p>Here are the details of Product</p>
+  {% if result==[] %}
+   No Show found
+  {% else %}
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>Name</th>
+            <th>Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in result %}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>{{n.name}}</td>
+                  <td><a href="/visit_product/{{n.id}}">Products</a></td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {%endif%}
+</body>
+</html>

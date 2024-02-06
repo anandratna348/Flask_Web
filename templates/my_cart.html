@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>cart</title>
+    <style> 
+*
+{
+  background-color: rgb(158, 208, 224);
+}
+</style>
+</head>
+<body>
+  <h3><a href="/buy">Purchased Item</a></h3>
+  <h3><a href="/user_dashboard">Home</a></h3>
+	<h1>Product List in Cart</h1>
+    <p>Here are the details of cart added products</p>
+	<table border = "1">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>User Id</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Remove Product</th>
+            <th>Buy Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for n in cart_added_product%}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td>{{n.user_id}}</td>
+                  <td>{{n.product_id}}</td>
+                  <td>{{n.product_name}}</td>
+                  <td>{{n.quantity}}</td>
+                  <td>{{n.price}}</td>
+                  <td><a href='/remove/{{n.product_id}}/'>Remove</a></td>
+                  <td><a href='/buying/{{n.product_id}}'>Buy</a></td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
